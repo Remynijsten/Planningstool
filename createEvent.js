@@ -23,6 +23,8 @@ function create(){
 			async : true,
 			success: function(response) {
 
+				console.log(response.starthour);
+				
 				totalevents = response.totalevent;
 				totalplayers = response.totalplayers;
 				starthour = response.starthour;
@@ -69,6 +71,8 @@ function create(){
 					event.style.cursor = "pointer";
 					event.style.position = "absolute";
 					event.style.border = "1px solid black";
+					event.style.borderRadius = "5%";
+					event.style.opacity = "0.75";
 					event.id = "event" + eventNumber;
 				
 					switch (testplayer[x].trim()){

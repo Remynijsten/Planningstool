@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main {
+  background-color: #222222;
+}
+.main .container {
+  width: 100vw;
+  height: 100vh;
+}
+.main .container .names {
+  width: 15vw;
+  height: 72vh;
+}
+.main .container .names .char {
+  width: 15vw;
+  height: 12vh;
+  border-bottom: 1px solid white;
+  position: relative;
+  background: DodgerBlue;
+}
+.main .container .names .char .avatar {
+  width: 35%;
+  height: 75%;
+  position: absolute;
+  top: 10%;
+  left: 3%;
+}
+.main .container .names .char .avatarTXT {
+  font-size: 1em;
+  color: white;
+  position: absolute;
+  left: 45%;
+  line-height: 12.5vh;
+}
+.main .container .table {
+  width: 70%;
+  height: 72.5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+  position: absolute;
+  left: 15%;
+  top: 0%;
+}
+.main .container .table .gridcolumn {
+  height: 72.5vh;
+  width: 16.7vw;
+  border: 1px dotted white;
+  position: relative;
+}
+.main .container .table .gridcolumn .timeTXT {
+  color: white;
+  position: absolute;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=table.css.map */

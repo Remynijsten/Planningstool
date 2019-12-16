@@ -13,10 +13,14 @@
 	<body>
 		<div class="main">
 			<?php include $_SERVER['DOCUMENT_ROOT'].'/php/table.php' ?>
-			<button onclick="create()">test</button>
+			<?php include "form.php" ?>
+
 		</div>
 
+
+
 		<script src="tables.js"></script>
-		<script src="createEvent.js"></script>		
+		<script src="createEvent.js"></script>	
+		<script src="addgame.js"></script>	
 	</body>
 </html>

@@ -1,0 +1,109 @@
+.addgame{
+	position: absolute;
+    top: 0%;
+    left: 15%;
+    width: 70vw;
+    height: 72.5vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    animation: bounce;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    form{
+		select{
+			height: 5%;
+			width: 30%;
+			font-size: 1em;
+			-webkit-appearance: none;
+			padding-left: 20px;
+			display: block;
+			margin: 5% auto 3% auto;
+		}
+		.avatar{
+			display: none;
+		    margin-left: 2%;
+		    margin-right: 2%;
+			.selectavatar{
+				display: inline-block;
+				padding: 0 2% 0 2%;
+				opacity: 0.5;
+				transition: 0.2s ease-out;
+				&:hover{
+					opacity: 1;
+					transform: scale(1.1 ,1.1);
+				}
+			}
+			.removechar{
+				cursor: pointer;
+			    color: white;
+			    margin-bottom: 10%;
+			    opacity: 0;
+			}
+			.selectedavatar{
+				display: inline-block;
+				padding: 0 2% 0 2%;
+				opacity: 0.5;
+				transform: scale(1.1, 1.1);
+				transition: 0.2s ease-out;
+			}
+			.avatarTXT{
+				color: white;
+				margin-top: 15%;
+			}
+		}
+		.times{
+		    margin-top: 5%;
+		    display: block;
+			input{
+				-webkit-appearance: none;
+				width: 10%;
+				height: 5%;
+				-webkit-appearance: none;
+				font-size: 1.5em;
+				padding-left: 3%;
+			}
+			p{
+				display: inline;
+				color: white;
+				margin: 0 10%;
+			}
+		}
+    }
+    .submitBTN{
+    	margin-top: 5%;
+	    width: 15vw;
+	    height: 5vh;
+	    text-align: center;
+	    font-size: 2vw;
+	    background: transparent;
+	    color: white;
+	    cursor: pointer;
+	    transition: 0.2s ease-out;
+	    &:hover{
+	    	transform: scale(1.1, 1.1);
+
+	    }
+    }
+    .errors{
+	    background: rgb(107, 3, 3);
+	    opacity: 1;
+	    width: 50vw;
+	    height: 5vh;
+	    margin: 0 auto;
+	    text-align: center;
+		opacity: 0;
+	    margin-top: 10%;
+		color: white;
+		position: relative;
+		line-height: 3;
+    }
+}
+
+@keyframes bounce{
+	0% 	{	top: -75%;	}
+	30% {	top: 0%;	}
+	40% {	top: -2%;	}
+	55%	{	top: 0%;	}
+	100%{	top: 0%;	}
+}

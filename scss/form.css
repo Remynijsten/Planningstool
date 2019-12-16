@@ -1,0 +1,12 @@
+.addgame {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  width: 50vw;
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=form.css.map */
