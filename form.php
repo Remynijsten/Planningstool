@@ -40,8 +40,6 @@
 		</select>
 		<p class="explainTXT">SELECTEER DE SPELERS</p>
 
-
-
 		<div class="avatar">
 			<p class="removechar">X</p>
 			<img src="img/Remy.png" alt="remy" value="remy" class="selectavatar">
@@ -79,20 +77,15 @@
 		</div>
 
 		<div class="times">
-			<input class="starthour" type="number" name="starthour" min="12" max="18" required>
-			<input class="startminute" type="number" name="startminute" min="00" max="59" required>
+			<input class="starthour" type="number" name="starthour" min="12" max="18" onkeypress="allowNumbersOnly(event)" required>
+			<input class="startminute" type="number" name="startminute" min="00" max="59" onkeypress="allowNumbersOnly(event)" required>
 	       	<p> TOT </p>
-			<input class="endhour" type="number" name="endhour" min="12" max="17" required>
-			<input class="endminute" type="number" name="endminute" min="00" max="59" required>
+			<input class="endhour" type="number" name="endhour" min="12" max="17" disabled>
+			<input class="endminute" type="number" name="endminute" min="00" max="59" disabled>
 		</div>
-
-
-
-
 
 	</form>
 
-	
-	<button class="submitBTN" type="submit" >Voeg Toe</button>
-	<div class="errors"></div>
+	<button class="submitBTN" >Voeg Toe</button>
+	<p class="closemenu">X</p>
 </div>

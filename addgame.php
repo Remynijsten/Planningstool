@@ -1,8 +1,7 @@
-
-
 <?php 
 
 $selectedgame = $_POST['selectedgame'];
+
 
 $servername = "localhost";
 $username = "root";
@@ -24,11 +23,11 @@ $maxplayers = $obj['max_players'];
 $explaintime = $obj['explain_minutes'];
 
 $gamevalues = array(
-		"gamename" => $gamename,
-		"duration" => $duration, 
-		"minplayers" => $minplayers, 
-		"maxplayers" => $maxplayers, 
-		"explaintime" => $explaintime, 
+	"gamename" => $gamename,
+	"duration" => $duration, 
+	"minplayers" => $minplayers, 
+	"maxplayers" => $maxplayers, 
+	"explaintime" => $explaintime, 
 );
 
 echo json_encode($gamevalues);

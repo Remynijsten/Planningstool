@@ -1,0 +1,165 @@
+.menu{
+	position: absolute;
+    top: -75%;
+    left: 15%;
+    width: 70vw;
+    height: 72.5vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    transition: 0.5s ease-in;
+    overflow: scroll;
+   		.gameIMG{
+			width: 25%;
+			height: auto;
+			margin-top: 1%;
+   		}
+   		.gameTitle{
+			color: white;
+			margin-top: 3%;
+			font-size: 2em;
+			border-bottom: 1px solid white;
+			display: inline-block;
+	    }
+	    .descr{
+	    	color: white;
+	    	display: block;
+	    	margin: 3% auto;
+	    	width: 80%;
+	    }
+	    .expansions{
+	    	display: none;
+	    	text-align: center;
+	    	h2{
+	    		color: white;
+    		    display: inline-block;
+			    border-bottom: 1px solid white;
+	    	}
+	    	p{
+	    		color: white;
+	    		margin-top: 1%;
+	    	}
+	    }
+	    @mixin editTXT{
+	    	text-align: center;
+	    	h2{
+	    		margin-top: 3%;
+	    		color: white;
+    		    display: inline-block;
+			    border-bottom: 1px solid white;
+	    	}
+	    	p{
+	    		color: white;
+	    		margin-top: 1%;
+	    	}
+	    }
+	    .skills{
+	    	@include editTXT;
+	    }
+		.url{
+			color: white;
+			margin-top: 3%;
+			cursor: pointer;
+			display: inline-block;
+			text-decoration: none;
+		}
+		.players{
+			@include editTXT;
+		}
+		.explainerContainer{
+			@include editTXT;
+		}
+		.timeContainer{
+			@include editTXT;
+		}
+
+   		.youtube{
+   			iframe{
+				width: 30vw;
+				height: 20vh;
+				display: block;
+				margin: 3% auto;
+   			}
+   		}
+   		
+   		@mixin btn{
+   			width: 15%;
+			height: 5%;
+			border-radius: 5%;
+			background: transparent;
+			color: white;
+			text-align: center;
+			font-size: 1em;
+			display: inline-block;
+   			margin: 3%;
+   			transition: 0.3s ease-out;
+   			cursor: pointer;		
+   			&:hover{
+   				transform: scale(1.1 , 1.1);
+   			}
+   		}
+		.delete{
+			@include btn;
+		}
+		.edit{
+			@include btn;
+		}
+
+    	.closemenu{
+			color: white;
+			position: absolute;
+			top: 3%;
+		    right: 3%;
+		    font-size: 2em;
+			font-weight: 900;
+			cursor: pointer;
+			transition: 0.1s ease-out;
+			&:hover{
+				transform: scale(1.1, 1.1);
+			}
+    	}
+    	.noDelete{
+    		display: none;
+    	}
+    	.confirmDelete{
+			display: none;
+    	}
+}
+.confirm{
+	display: none;
+	width: 69.8%;
+    height: 72.5%;
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    z-index: 50;
+    .confirmTXT{
+    	margin-top: 5%;
+    }
+    .confirmDelete{
+	    position: absolute;
+	    bottom: 10%;
+	    right: 10%;
+	    font-size: 1.2em;
+	    transition: 0.1s ease-out;
+	    cursor: pointer;
+	    &:hover{
+	    	transform: scale(1.1, 1.1);
+	    }
+    }
+    .noDelete{
+		position: absolute;
+	    bottom: 10%;
+	    left: 10%;
+	    font-size: 1.2em;
+	    transition: 0.1s ease-out;
+	    cursor: pointer;
+	    &:hover{
+	    	transform: scale(1.1, 1.1);
+	    }
+    }
+}

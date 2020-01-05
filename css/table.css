@@ -20,7 +20,7 @@
   height: 12vh;
   border-bottom: 1px solid white;
   position: relative;
-  background: DodgerBlue;
+  background: #595959;
 }
 .main .container .names .char .avatar {
   width: 35%;
@@ -42,16 +42,32 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  background-color: DodgerBlue;
+  background-color: #595959;
   position: absolute;
   left: 15%;
   top: 0%;
+}
+.main .container .table .deletemsg {
+  position: absolute;
+  top: 107%;
+  left: 10%;
+  width: 80%;
+  height: 5%;
+  background: #265526;
+  color: white;
+  text-align: center;
+  padding-top: 2%;
 }
 .main .container .table .gridcolumn {
   height: 72.5vh;
   width: 16.7vw;
   border: 1px dotted white;
   position: relative;
+}
+.main .container .table .gridcolumn div {
+  text-align: center;
+  border: 1px solid white;
+  transition: 0.1s ease-out;
 }
 .main .container .table .gridcolumn .timeTXT {
   color: white;

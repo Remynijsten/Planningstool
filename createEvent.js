@@ -1,119 +1,171 @@
 var eventNumber = 1;
-
-var dataString = {
-	id : 1,
-};
-
+var gamename;
 var totalevents;
 var totalplayers;
-var starthour;
-var startminute;
-var endhour;
-var endminute;
+var target;
+var players;
+var startuur;
+var startminuut;
+var einduur;
+var eindminuut; 
+var id;
+var errormsg = [];
+var explainer;
+var value;
 
-//Create Schedule Event
-function create(){
-	for (event=0;event<2;event++){
+function create(configParameter, valueParameter){
 
-		$.ajax({  
-			type: 'GET',  
-			url: 'variables.php', 
-			data: dataString,
-			dataType : 'json',
-			async : true,
-			success: function(response) {
+	$.ajax({  
+		type: 'GET',  
+		url: 'variables.php',
+		data: {
+			'config' : configParameter,
+			'value' : valueParameter
+		},
+		datatype: 'json',
+		async : true,
+		success: function(response) {
+			var result = JSON.parse(response);
 
-				console.log(response.starthour);
-				
-				totalevents = response.totalevent;
-				totalplayers = response.totalplayers;
-				starthour = response.starthour;
-				startminute = response.startminute;
-				endhour = response.endhour;
-				endminute=response.endminute;
-				playtime = response.playtime;
-				explaintime = response.explaintime;
-				testplayer = response.players;
-				testgame = response.game;
+			startuur = result.starthour;
+			startminuut = result.startminute;
+			einduur = result.endhour;
+			eindminuut = result.endminute;
+			duration = result.duration;
+			totalplayers = result.totalplayers;
+			playtime = result.playtime;
+			explaintime = result.explaintime;
+			explainer = result.explainer;
+			players = result.players;
+			gamename = result.game;
+			id = result.idnumber;
 
-				for (x=0;x<totalplayers;x++){
-					switch (starthour){
-						case "12":
-						target = 0;
-						break;
+			var explainEvent = document.createElement("div");
+			explainEvent.style.marginLeft = startminuut * 1.67 + "%";
+			explainEvent.style.width = explaintime * 1.67 + "%";
+			explainEvent.style.height = "12vh";
+			explainEvent.style.zIndex = "10";
+			explainEvent.style.cursor = "pointer";
+			explainEvent.style.position = "absolute";
+			explainEvent.style.borderRadius = "5%";
+			explainEvent.style.opacity = "0.75";
+			explainEvent.className = "explain" + id;
+			explainEvent.style.background = "white";
+			explainEvent.value = id;
+			explainEvent.setAttribute("onclick", "openEdit(this)");
 
-						case "13":
-						target = 1;
-						break;
+			switch (explainer){
+				case "remy":
+				explainEvent.style.marginTop =  "0vh";
+				break;
 
-						case "14":
-						target = 2;
-						break;
+				case "billy":
+				explainEvent.style.marginTop = "12vh";
+				break;
 
-						case "15":
-						target = 3;
-						break;
+				case "harry":
+				explainEvent.style.marginTop = "24vh";
+				break;
 
-						case "16":
-						target = 4;
-						break;
+				case "jack":
+				explainEvent.style.marginTop = "36vh";
+				break;
 
-						case "17":
-						target = 5;
-						break;
-					}
-					
-					var event = document.createElement("div");
-					event.style.marginLeft = startminute * 1.67 + "%";
-					event.style.width = playtime * 1.67 + "%";
-					event.style.height = "12vh";
-					event.style.zIndex = "10";
-					event.style.cursor = "pointer";
-					event.style.position = "absolute";
-					event.style.border = "1px solid black";
-					event.style.borderRadius = "5%";
-					event.style.opacity = "0.75";
-					event.id = "event" + eventNumber;
-				
-					switch (testplayer[x].trim()){
-						case "remy":
-						event.style.marginTop =  "0vh";
-						event.style.background = "orange";
-						break;
+				case "thijmen":
+				explainEvent.style.marginTop = "48vh";
+				break;
 
-						case "billy":
-						event.style.marginTop = "12vh";
-						event.style.background = "blue";
-						break;
+				case "luigi":
+				explainEvent.style.marginTop = "60vh";
+				break;
 
-						case "harry":
-						event.style.marginTop = "24vh";
-						event.style.background = "yellow";
-						break;
-
-						case "jack":
-						event.style.marginTop = "36vh";
-						event.style.background = "brown";
-						break;
-
-						case "thijmen":
-						event.style.marginTop = "48vh";
-						event.style.background = "darkgrey";
-						break;
-
-						case "luigi":
-						event.style.marginTop = "60vh";
-						event.style.background = "darkgreen";
-						break;
-
-						default:
-						break;
-					}
-					document.getElementsByClassName("gridcolumn")[target].append(event);
-					eventNumber++;		
-				}
+				default:
+				break;
 			}
-		});
-		dataString.id++;
-	}
+
+			switch (startuur){
+				case "12":
+				target = 0;
+				break;
+
+				case "13":
+				target = 1;
+				break;
+
+				case "14":
+				target = 2;
+				break;
+
+				case "15":
+				target = 3;
+				break;
+
+				case "16":
+				target = 4;
+				break;
+
+				case "17":
+				target = 5;
+				break; 
+			}
+
+			document.getElementsByClassName("gridcolumn")[target].append(explainEvent);
+
+			for (x=0;x<totalplayers;x++){
+
+				var event = document.createElement("div");
+				event.style.marginLeft = (+startminuut + +explaintime) * 1.67 + "%";
+				event.style.width = duration * 1.67 + "%";
+				event.style.height = "12vh";
+				event.style.zIndex = "10";
+				event.style.cursor = "pointer";
+				event.style.position = "absolute";
+				event.style.borderRadius = "5%";
+				event.style.opacity = "0.75";
+				event.className = "event" + id;
+				event.id = "gameEvent";
+				event.style.background = "dodgerblue";
+				event.value = id;
+				event.setAttribute("onclick", "openEdit(this)");
+
+
+				switch (players[x].trim()){
+					case "remy":
+					event.style.marginTop =  "0vh";
+
+					break;
+
+					case "billy":
+					event.style.marginTop = "12vh";
+
+					break;
+
+					case "harry":
+					event.style.marginTop = "24vh";
+
+					break;
+
+					case "jack":
+					event.style.marginTop = "36vh";
+
+					break;
+
+					case "thijmen":
+					event.style.marginTop = "48vh";
+					
+					break;
+
+					case "luigi":
+					event.style.marginTop = "60vh";
+
+					break;
+
+					default:
+					break;
+				}
+
+				document.getElementsByClassName("gridcolumn")[target].append(event);	
+			}
+		}
+	});
 }

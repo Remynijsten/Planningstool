@@ -1,15 +1,23 @@
+.addevent {
+  position: absolute;
+  top: 75%;
+  height: 10%;
+  width: 15%;
+  font-size: 1em;
+  color: white;
+  background: dodgerblue;
+}
+
 .addgame {
   position: absolute;
-  top: 0%;
+  top: -75%;
   left: 15%;
   width: 70vw;
   height: 72.5vh;
   z-index: 100;
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  animation: bounce;
-  animation-duration: 2s;
-  animation-timing-function: linear;
+  transition: 0.5s ease-in;
 }
 .addgame form select {
   height: 5%;
@@ -20,8 +28,11 @@
   display: block;
   margin: 5% auto 3% auto;
 }
+.addgame form .explainTXT {
+  color: white;
+}
 .addgame form .avatar {
-  display: none;
+  display: inline-block;
   margin-left: 2%;
   margin-right: 2%;
 }
@@ -55,6 +66,7 @@
 .addgame form .times {
   margin-top: 5%;
   display: block;
+  opacity: 1;
 }
 .addgame form .times input {
   -webkit-appearance: none;
@@ -91,28 +103,17 @@
   margin: 0 auto;
   text-align: center;
   opacity: 0;
-  margin-top: 10%;
+  margin-top: 1%;
   color: white;
   position: relative;
   line-height: 3;
 }
-
-@keyframes bounce {
-  0% {
-    top: -75%;
-  }
-  30% {
-    top: 0%;
-  }
-  40% {
-    top: -2%;
-  }
-  55% {
-    top: 0%;
-  }
-  100% {
-    top: 0%;
-  }
+.addgame .closemenu {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  color: white;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=form.css.map */
